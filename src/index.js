@@ -1,10 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App.jsx'
+import Dashboard from './Dashboard.jsx';
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Dashboard />} />
+        <Route path="/load-balancer" element={<App />}/>
+      </Routes>
+    </Router>
 )
